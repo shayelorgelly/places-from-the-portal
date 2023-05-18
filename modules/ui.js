@@ -1,3 +1,4 @@
+const { colorText, colorLog, colorBG } = require("./recolor.js")
 module.exports = {
     getTerminalSize: ()=>{
         return [process.stdout.rows, process.stdout.columns]
@@ -9,5 +10,11 @@ module.exports = {
             return false// terminal is not big enough to meet rows/columns requirement
         }
         return true
+    },
+    shapes: {
+        "line": (color)=>{
+            return colorBG(" ".repeat(module.exports.getTerminalSize()[1]), color)
+        }
+        
     }
 }

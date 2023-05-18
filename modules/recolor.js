@@ -5,3 +5,6 @@ module.exports.colorLog = (message,rgbarray)=>{
     console.log(`\x1b[38;2;${rgbarray.join(";")}m${message}\x1b[0m`)
     return true
 }
+module.exports.colorBG = (message,rgbarray)=>{
+    return (`\x1b[48;2;${rgbarray.join(";")}m${message}\x1b[0m`)
+}
