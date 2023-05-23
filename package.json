@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "keypress": "^0.2.1"
+  },
+  "name": "zplaces-from-the-portal",
+  "description": "Game",
+  "version": "1.0.0",
+  "main": "new-game.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
