@@ -1,4 +1,4 @@
-const {printColor, print} = require("./console.js")
+const {printColor} = require("./console.js")
 const { getRandomInt } = require("./randomer.js")
 module.exports.waitSync = (ms)=>{
     var start = Date.now(),
@@ -18,16 +18,15 @@ module.exports.loopPrintOnTimer = (data, i, milliseconds, nonewline)=>{
         process.stdout.write("\n")
     }
 }
-module.exports.loopPrintColorOnTimer = (data, i, milliseconds,rgb, nonewline)=>{
-    i = i - 1
+module.exports.loopPrintColorOnTimer = (data, i, milliseconds, color, nonewline)=>{
     let _i = 0
     while(_i <= i){//loop <i> times
-        printColor(data, rgb);
+        printColor(data, color);
         this.waitSync(milliseconds);//"this" means this scripts module exports 
         _i++;
     }
     if(!nonewline){
-        print("\n")
+        process.stdout.write("\n")
     }
 }
 module.exports.fakeTypingPrintTimerColor = (data, ms, rgbarray)=>{

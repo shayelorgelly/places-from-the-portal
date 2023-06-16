@@ -6,4 +6,4 @@ def colorLog(message,rgbarray):
 # import recolor
 # colorLog("hello", [0,255,0]) #green
 # colorText("Hello World!", [255,0,0]) #red
-colorLog("hello", [255,0,0])
+colorLog("Colors Loaded :D", [255,0,0])
