@@ -13,13 +13,13 @@ if not skip_loading:  # if skip loading is false
     sleep(500)
     clear_console()
 
-# greetings = ["Hey, ", "Welcome back, ", "Howdy, "]
-# items = []
-# jstypec(greetings[1] + "Jim Johnson\n", [255, 255, 255], defaultDelay / 2)
-# sleep(2000)
-# jstypec("The portal is nearly done", white, defaultDelay)
-# type_writer_color("...", white, 500)
-# type_writer_color("  we just need to make one more component\n", white, defaultDelay)
+greetings = ["Hey, ", "Welcome back, ", "Howdy, "]
+items = []
+jstypec(greetings[1] + "Jim Johnson\n", [255, 255, 255], defaultDelay / 2)
+sleep(2000)
+jstypec("The portal is nearly done", white, defaultDelay)
+type_writer_color("...", white, 500)
+type_writer_color("  we just need to make one more component\n", white, defaultDelay)
 
 
 def portal_room():
@@ -149,7 +149,8 @@ def desert():
                     jstypec("How did i get here:", white, defaultDelay)
                     sleep(500)
                     type_writer_color("Doctor: ", [100, 255, 100], defaultDelay)
-                    type_writer_color("You were found in a cave in the middle of the desert\n", [255, 255, 255], defaultDelay)
+                    type_writer_color("You were found in a cave in the middle of the desert\n", [255, 255, 255],
+                                      defaultDelay)
                     sleep(500)
                     type_writer_color("Doctor: ", [100, 255, 100], defaultDelay)
                     type_writer_color(
@@ -186,36 +187,45 @@ def desert():
                 sleep(500)
                 death("All of your thoughts are consumed by the flames")
             elif klk == "no" or klk == "n":
-                type_writer_color("You walk past the abandoned aircraft, noticing the gas leaking out of its fuel tank\n", [255, 255, 255], defaultDelay)
+                type_writer_color(
+                    "You walk past the abandoned aircraft, noticing the gas leaking out of its fuel tank\n",
+                    [255, 255, 255], defaultDelay)
                 sleep(500)
                 type_writer_color("The aircraft suddenly bursts into flames\n", [255, 255, 255], defaultDelay)
                 sleep(500)
                 ol = inputv2("Do you want to put your cool sunglasses on?", ["yes", "no", "y", "n"])
                 if ol == "yes" or ol == "y":
-                    type_writer_color("You put your cool looking sunglasses and walk away from the burning aircrat\n", [255, 255, 255], defaultDelay)
+                    type_writer_color("You put your cool looking sunglasses and walk away from the burning aircraft\n",
+                                      [255, 255, 255], defaultDelay)
                     sleep(500)
                 if ol == "no" or ol == "n":
-                    type_writer_color("You walk away from the burning aircraft but dont look as cool\n", [255, 255, 255], defaultDelay)
+                    type_writer_color("You walk away from the burning aircraft but dont look as cool\n",
+                                      [255, 255, 255], defaultDelay)
                     sleep(500)
                 type_writer_color("You finally see a oil sample in the ground\n", [255, 255, 255], defaultDelay)
                 sleep(500)
                 type_writer_color("You get a sample of the oil\n", [255, 255, 255], defaultDelay)
                 sleep(500)
-                type_writer_color("You enable the recall device and feel as though your position is being pulled away from you\n", [255, 255, 255], defaultDelay)
+                type_writer_color(
+                    "You enable the recall device and feel as though your position is being pulled away from you\n",
+                    [255, 255, 255], defaultDelay)
                 sleep(500)
                 type_writer_color("Its a terrible feeling\n", [255, 255, 255], defaultDelay)
                 sleep(500)
-                type_writer_color("The device beeps and you are flung through the fourth dimension back to the portal room", [255, 255, 255], defaultDelay)
+                type_writer_color(
+                    "The device beeps and you are flung through the fourth dimension back to the portal room",
+                    [255, 255, 255], defaultDelay)
                 sleep(500)
-                type_writer_color("Back in the portal room, you talk to John Smith about your findings\n", [255, 255, 255], defaultDelay)
-                #american accent
+                type_writer_color("Back in the portal room, you talk to John Smith about your findings\n",
+                                  [255, 255, 255], defaultDelay)
                 jstypec("Well done, you have found the oil sample\n", white, defaultDelay)
                 sleep(500)
-                jstypec("Boss, this sample looks really promising, was there anything else in that desert?\n", white, defaultDelay)
+                jstypec("Boss, this sample looks really promising, was there anything else in that desert?\n", white,
+                        defaultDelay)
                 sleep(500)
                 inputv2("Do you want to tell John about the aircraft?", ["yes", "no", "y", "n"])
                 sleep(500)
-                jstypec("Thats odd, the scanner we sent through said that its no where near earth", white, defaultDelay)
+                jstypec("That's odd, the scanner we sent through said that its no where near earth", white, defaultDelay)
                 sleep(500)
                 jstypec("I wonder if its a alien aircraft or something\n", white, defaultDelay)
                 sleep(500)
@@ -238,7 +248,6 @@ def desert():
                 type_writer_color("|  Oil will work in a generator       |\n", [255, 255, 255], defaultDelay * 6)
                 sleep(500)
                 game_credits()
-
 
 
 def death(reason: str):
@@ -291,7 +300,8 @@ def enter_portal(e):
     else:
         portal_room()  # incase I had extra time to make portal go back to the portal room
 
-game_credits()
+
+# game_credits()
 # start game
 portal_room()
 # desert()  # for desert testing

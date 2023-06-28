@@ -8,7 +8,7 @@ defaultDelay = 35  # ms
 white = [255, 255, 255]
 
 
-def sleep(ms: int):
+def sleep(ms: int):  # in milliseconds
     time.sleep(ms / 1000)
 
 
