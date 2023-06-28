@@ -1,4 +1,8 @@
-def inputv2(question, acceptable):
+"""advanced input module"""
+
+
+def inputv2(question: str, acceptable: list):
+    """use advanced input"""
     accepted = False
     while not accepted:
         x = input(question)
