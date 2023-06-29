@@ -2,7 +2,6 @@
 from functions import *
 from scanner import scan  # extra function, so I don't need to type it all
 from inputv2 import inputv2
-
 # after finished importing and functions
 sleep(500)  # wait a sec
 clear_console()
@@ -24,11 +23,11 @@ type_writer_color("  we just need to make one more component\n", white, defaultD
 
 def portal_room():
     """takes you to the same or different function based on input"""
-    x = inputv2("[Travel] [Talk to John Smith]", ["travel", "1", "talk", "2"])
+    x = inputv2("Travel[1] Talk to John Smith[2]", ["travel", "1", "talk", "2"])
     if match_from_array(x, ["travel", "1"]):
         # if travelling
         type_writer_color("Where would you like to go?\n", [255, 255, 255], defaultDelay)
-        x = inputv2("[Enter the portal] [Back to the portal room]", ["portal", "1", "back", "2"])
+        x = inputv2("Enter the portal[\n Back to the portal room[2]", ["portal", "1", "back", "2"])
         if match_from_array(x, ["portal", "1"]):
             enter_portal("desert")
             return
@@ -301,7 +300,7 @@ def enter_portal(e):
         portal_room()  # incase I had extra time to make portal go back to the portal room
 
 
-# game_credits()
+# game_credits()  # debug prints
 # start game
-portal_room()
+portal_room()  # start the game
 # desert()  # for desert testing

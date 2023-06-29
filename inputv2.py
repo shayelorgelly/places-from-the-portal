@@ -6,6 +6,7 @@ def inputv2(question: str, acceptable: list):
     accepted = False
     while not accepted:
         x = input(question)
+        x = x.replace(" ", "").lower()  # remove all spaces and make lowercase
         for z in acceptable:
             if x == z:
                 accepted = True
