@@ -56,8 +56,3 @@ def match_from_array(data: str, array) -> bool:
         return True
     else:
         return False
-
-
-def clear():
-    os.system("cls")
-    # print("\033c")
