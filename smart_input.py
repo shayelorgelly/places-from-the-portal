@@ -5,7 +5,7 @@ def smart_input(question: str, acceptable: list):  # input func that prevents cr
     """use advanced input"""
     accepted = False
     while not accepted:
-        x = input(question + ">")
+        x = input(question + "  >")
         x = x.replace(" ", "").lower()  # remove all spaces and make lowercase
         for z in acceptable:
             if x == z:
