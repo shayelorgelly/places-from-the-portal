@@ -4,7 +4,7 @@ from scanner import scan  # extra function, so I don't need to type it all
 from smart_input import smart_input  # smarter input function
 
 # after finished importing and functions
-sleep(500)  # wait a sec
+sleep(500)  # wait a half-sec
 clear_console()
 skip_loading = False
 if not skip_loading:  # this is the loading screen of my game
@@ -12,12 +12,12 @@ if not skip_loading:  # this is the loading screen of my game
     type_writer_color("...", [255, 255, 0], 500)
     sleep(500)
     clear_console()
+items = []  # define items for later use
 
 
 def greet():
     greetings = ["Hey, ", "Welcome back, to the lab,    ",
                  "Howdy, "]  # didn't get time to make random greeting function
-    items = []
 
     jstypec(greetings[1] + "Jim Johnson\n", [255, 255, 255], defaultDelay / 2)
     sleep(2000)
