@@ -1,3 +1,4 @@
+"""Made by Shaye Lorgelly"""
 from functions import type_writer_color, sleep, defaultDelay
 
 

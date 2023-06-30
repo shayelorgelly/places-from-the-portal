@@ -1,7 +1,8 @@
-"""it's a game!!!"""
+"""Made by Shaye Lorgelly"""
 from functions import *
 from scanner import scan  # extra function, so I don't need to type it all
-from inputv2 import inputv2
+from smart_input import smart_input  # smarter input function
+
 # after finished importing and functions
 sleep(500)  # wait a sec
 clear_console()
@@ -12,8 +13,10 @@ if not skip_loading:  # if skip loading is false
     sleep(500)
     clear_console()
 
-greetings = ["Hey, ", "Welcome back, ", "Howdy, "]
+
+greetings = ["Hey, ", "Welcome back, to the lab,    ", "Howdy, "]  # didn't get time to make random greeting function
 items = []
+
 jstypec(greetings[1] + "Jim Johnson\n", [255, 255, 255], defaultDelay / 2)
 sleep(2000)
 jstypec("The portal is nearly done", white, defaultDelay)
@@ -23,11 +26,11 @@ type_writer_color("  we just need to make one more component\n", white, defaultD
 
 def portal_room():
     """takes you to the same or different function based on input"""
-    x = inputv2("Travel[1] Talk to John Smith[2]", ["travel", "1", "talk", "2"])
+    x = smart_input("Travel[1] Talk to John Smith[2]", ["travel", "1", "talk", "2"])
     if match_from_array(x, ["travel", "1"]):
         # if travelling
         type_writer_color("Where would you like to go?\n", [255, 255, 255], defaultDelay)
-        x = inputv2("Enter the portal[1] Back to the portal room[2]", ["portal", "1", "back", "2"])
+        x = smart_input("Enter the portal[1] Back to the portal room[2]", ["portal", "1", "back", "2"])
         if match_from_array(x, ["portal", "1"]):
             enter_portal("desert")
             return
@@ -67,7 +70,7 @@ def desert():
     type_writer_color("and begin to scan the creature\n", [100, 100, 100], defaultDelay * 2)
     sleep(750)  # 750ms
     scan("Ooragnak")
-    ans = inputv2('Do you wish to fight the "Ooragnak"? [yes] [no]', ["yes", "no", "y", "n"])
+    ans = smart_input('Do you wish to fight the "Ooragnak"? [yes] [no]', ["yes", "no", "y", "n"])
     if ans == "yes" or ans == "y":
         # fighting
         clear_console()
@@ -90,7 +93,7 @@ def desert():
         type_writer_color("Building", [255, 0, 255], defaultDelay)
         type_writer_color(" in the distance on your left\n", [255, 255, 255], defaultDelay)
         sleep(1000)
-        ans_ = inputv2("What direction do you want to go? [left] [right]", ["left", "right", "l", "r"])
+        ans_ = smart_input("What direction do you want to go? [left] [right]", ["left", "right", "l", "r"])
         if ans_ == "left" or ans_ == "l":
             type_writer_color("You walk towards the building\n", [255, 255, 255], defaultDelay)
             sleep(1000)
@@ -107,7 +110,7 @@ def desert():
             type_writer_color("You turn around and see a pair of ", [255, 255, 255], defaultDelay)
             type_writer_color("glowing eyes\n", [255, 0, 0], defaultDelay)
             sleep(1000)
-            ans = inputv2("Do you want to try and run through the darkness? [yes] [no]", ["yes", "no", "y", "n"])
+            ans = smart_input("Do you want to try and run through the darkness? [yes] [no]", ["yes", "no", "y", "n"])
             if ans == "yes" or ans == "y":
                 type_writer_color("You run through the darkness\n", [255, 255, 255], defaultDelay)
                 sleep(1000)
@@ -132,7 +135,7 @@ def desert():
                 type_writer_color("The traveller ignites his lantern\n", [255, 255, 255], defaultDelay)
                 sleep(1000)
                 type_writer_color("The traveller offers to take you back to America\n", [255, 255, 255], defaultDelay)
-                a = inputv2("Do you want to go back to accept his offer? [yes] [no]", ["yes", "no", "y", "n"])
+                a = smart_input("Do you want to go back to accept his offer? [yes] [no]", ["yes", "no", "y", "n"])
                 if a == "yes" or a == "y":
                     # he presses a button uses a mysterious watch, and you are instantly transported back to america
                     type_writer_color("You accept his offer\n", [255, 255, 255], defaultDelay)
@@ -166,6 +169,20 @@ def desert():
                     type_writer_color("You are discharged from the hospital\n", [255, 255, 255], defaultDelay)
                     sleep(1000)
                     credits()
+                if a == "no" or a == "n":
+                    type_writer_color("The travellers lantern suddenly goes out, and you hear a rush of wind\n", white,
+                                      defaultDelay * 2)
+                    sleep(2000)
+                    type_writer_color("More glowing eyes appear around you\n", [255, 255, 0], defaultDelay * 4)
+                    sleep(1000)
+                    type_writer_color("All of the eyes charge at you\n", [255, 0, 0], defaultDelay * 2)
+                    sleep(1000)
+                    type_writer_color("They begin to draw your life away from you\n", white, defaultDelay * 2)
+                    sleep(1000)
+                    type_writer_color("in a way you couldn't begin to understand\n", [], defaultDelay)
+                    sleep(1000)
+                    death("Your life gets sucked away by entities that shouldn't exist")
+
         if ans_ == "right" or ans_ == "r":
             # other way
             type_writer_color("You walk the other way\n", [255, 255, 255], defaultDelay)
@@ -175,7 +192,7 @@ def desert():
             sleep(1000)
             type_writer_color("in the distance\n", [255, 255, 255], defaultDelay)
             sleep(1000)
-            klk = inputv2("Do you want to go to the aircraft? [yes] [no]", ["yes", "no", "y", "n"])
+            klk = smart_input("Do you want to go to the aircraft? [yes] [no]", ["yes", "no", "y", "n"])
             if klk == "yes" or klk == "y":
                 type_writer_color("You walk to the aircraft\n", [255, 255, 255], defaultDelay)
                 sleep(1000)
@@ -194,7 +211,7 @@ def desert():
                 sleep(1000)
                 type_writer_color("The aircraft suddenly bursts into flames\n", [255, 255, 255], defaultDelay)
                 sleep(1000)
-                ol = inputv2("Do you want to put your cool sunglasses on?", ["yes", "no", "y", "n"])
+                ol = smart_input("Do you want to put your cool sunglasses on?", ["yes", "no", "y", "n"])
                 if ol == "yes" or ol == "y":
                     type_writer_color("You put your cool looking sunglasses and walk away from the burning aircraft\n",
                                       [255, 255, 255], defaultDelay)
@@ -224,9 +241,10 @@ def desert():
                 jstypec("Boss, this sample looks really promising, was there anything else in that desert?\n", white,
                         defaultDelay)
                 sleep(1000)
-                inputv2("Do you want to tell John about the aircraft?", ["yes", "no", "y", "n"])
+                smart_input("Do you want to tell John about the aircraft?", ["yes", "no", "y", "n"])
                 sleep(1000)
-                jstypec("That's odd, the scanner we sent through said that its no where near earth", white, defaultDelay)
+                jstypec("That's odd, the scanner we sent through said that its no where near earth", white,
+                        defaultDelay)
                 sleep(1000)
                 jstypec("I wonder if its a alien aircraft or something\n", white, defaultDelay)
                 sleep(1000)
@@ -254,6 +272,8 @@ def desert():
 def death(reason: str):
     """when you die"""
     type_writer_color(reason, [255, 0, 0], 100)  # 100ms
+    sleep(3000)
+
     quit()
 
 
@@ -302,7 +322,6 @@ def enter_portal(e):
         portal_room()  # incase I had extra time to make portal go back to the portal room
 
 
-# start game
 portal_room()  # start the game
 
 # game_credits()  # debug prints

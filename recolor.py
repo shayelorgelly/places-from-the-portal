@@ -17,5 +17,4 @@ colorLog("hello", [0, 255, 0]) #green
 colorText("Hello World!", [255, 0, 0]) #red
 """  # example usage
 
-
 color_log("Colors Loaded :D", [255, 0, 0])

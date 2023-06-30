@@ -1,4 +1,4 @@
-import os
+"""Made by Shaye Lorgelly"""
 import recolor
 import sys
 import time
@@ -15,7 +15,7 @@ def sleep(ms: int):  # in milliseconds
 wait, delay = sleep, sleep  # alias
 
 
-def type_writer(text: str, delay_between_char: int):
+def type_writer(text: str, delay_between_char: int):  # typewriter effect
     """using type hints because I like type hints"""
     assert text, "text missing"
     if not delay_between_char:
@@ -23,13 +23,14 @@ def type_writer(text: str, delay_between_char: int):
     for char in text:
         sys.stdout.write(char)
         sleep(delay_between_char)
+        sys.stdout.flush()
 
 
-def clear_console():
+def clear_console():  # uses ansi code to clear console
     sys.stdout.write("\033c")
 
 
-def type_writer_color(text: str, color, delay_between_char: int):
+def type_writer_color(text: str, color, delay_between_char: int):  # does typewriter effect but with color
     assert text, "text missing"  # make sure we have it
     assert color, "color missing..."
     if not delay_between_char:
