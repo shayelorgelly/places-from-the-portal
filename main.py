@@ -7,21 +7,23 @@ from smart_input import smart_input  # smarter input function
 sleep(500)  # wait a sec
 clear_console()
 skip_loading = False
-if not skip_loading:  # if skip loading is false
+if not skip_loading:  # this is the loading screen of my game
     type_writer_color("Places From The Portal", [255, 255, 0], defaultDelay * 1.5)
     type_writer_color("...", [255, 255, 0], 500)
     sleep(500)
     clear_console()
 
 
-greetings = ["Hey, ", "Welcome back, to the lab,    ", "Howdy, "]  # didn't get time to make random greeting function
-items = []
+def greet():
+    greetings = ["Hey, ", "Welcome back, to the lab,    ",
+                 "Howdy, "]  # didn't get time to make random greeting function
+    items = []
 
-jstypec(greetings[1] + "Jim Johnson\n", [255, 255, 255], defaultDelay / 2)
-sleep(2000)
-jstypec("The portal is nearly done", white, defaultDelay)
-type_writer_color("...", white, 500)
-type_writer_color("  we just need to make one more component\n", white, defaultDelay)
+    jstypec(greetings[1] + "Jim Johnson\n", [255, 255, 255], defaultDelay / 2)
+    sleep(2000)
+    jstypec("The portal is nearly done", white, defaultDelay)
+    type_writer_color("...", white, 500)
+    type_writer_color("  we just need to make one more component\n", white, defaultDelay)
 
 
 def portal_room():
@@ -322,6 +324,7 @@ def enter_portal(e):
         portal_room()  # incase I had extra time to make portal go back to the portal room
 
 
+greet()  # start greeting thing
 portal_room()  # start the game
 
 # game_credits()  # debug prints
